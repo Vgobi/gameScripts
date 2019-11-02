@@ -7,8 +7,9 @@ import subprocess
 class FapCeo():
 
     start = 0
-    X = []
-    Y = []
+    X = [0,1,2,3,4,5,6,7,8,9,10]
+    Y = [0,1,2,3,4,5,6,7,8,9,10]
+    
     def __init__(self, numberOfClicks = 1000, levelUp = False, trySellCompany = False, ):
         print "Script start {}".format(datatime.time.now())
         self.numberOfClicks = numberOfClicks
