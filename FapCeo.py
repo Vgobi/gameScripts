@@ -10,11 +10,11 @@ Y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 class FapCeo():
     
-    def __init__(self, numberOfClicks = 10, levelUp = False, trySellCompany = False, girlsNumber = 11):
+    def __init__(self, numberOfClicks = 10, levelUp = False, SellCompany = False, girlsNumber = 11):
         print ("Script start {}".format(datetime.datetime.now()))
         self.numberOfClicks = numberOfClicks
         self.levelUp = levelUp
-        self.trySellCompany = trySellCompany
+        self.SellCompany = SellCompany
         self.girlsNumber = girlsNumber
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -49,13 +49,13 @@ class FapCeo():
             self.girls()
             start = start + 1
 
-        if self.levelUp == True and self.trySellCompany == True:
+        if self.levelUp != False and self.SellCompany != False:
             self.trySellCompany()
         else:
             print ("Script made {} cliks".format(self.numberOfClicks))
 
 def main():
-    game = FapCeo(10)
+    game = FapCeo(10,True,True)
     game.clickPrivateShow()
 
 main()
