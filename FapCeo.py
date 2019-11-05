@@ -5,8 +5,9 @@ import re
 import subprocess
 
 start = 0
-X = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-Y = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+X = ["410", "553", "578", "703", "874", "993", "851", "698", "823", "967", "1129"]
+Y = ["440", "534", "336", "429", "316", "401", "428", "590", "670", "585", "494"]
+print(len(X))
 
 class FapCeo():
     
@@ -32,12 +33,11 @@ class FapCeo():
       # subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
 
     def girls(self):
+        i =0
         print ("Clicker use {} girls".format(self.girlsNumber))
-        for i in X:
-            xX = str(X[i])
-            yY = str(Y[i])
-            print ("X: {} Y: {}".format(xX,yY))
-          #  subprocess.call(["xdotool", "mousemove", "X", "Y", "click", "1"])
+        while i < len(X):
+            subprocess.call(["xdotool", "mousemove", X[i], Y[i], "click", "1"])
+            i = i + 1
 
             #if self.levelUp == True:
              #   self.girlsLevelUp()
