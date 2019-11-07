@@ -25,24 +25,30 @@ class FapCeo():
 
     def hire_girls(self):
         print("Hire new girls")
-        time.sleep(10)
+        time.sleep(20)
         subprocess.call(["xdotool", "mousemove", "1168", "530", "click", "1"])
         subprocess.call(["xdotool", "mousemove", "1158", "206", "click", "1"])
+        time.sleep(5)
         subprocess.call(["xdotool", "mousemove", "893", "357", "click", "1"])
         subprocess.call(["xdotool", "mousemove", "1158", "206", "click", "1"])
+        subprocess.call(["xdotool", "mousemove", "893", "357", "click", "1"])
+        time.sleep(20)
+        subprocess.call(["xdotool", "mousemove", "410", "440", "click", "1"])
+        time.sleep(5)
 
     def try_sell_company(self):
         print("Try Sell Company")
         subprocess.call(["xdotool", "mousemove", "1326", "179", "click", "1"])
         subprocess.call(["xdotool", "mousemove", "868", "595", "click", "1"])
         time.sleep(10)
-        subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
+        #subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
         if self.hire_new_girls is True:
             self.hire_girls()
 
     def girls(self):
         i = 0
         print("Clicker use {} girls".format(self.girls_number))
+        #self.girls_level_up()
         while i < len(X):
             subprocess.call(["xdotool", "mousemove", X[i], Y[i], "click", "1"])
             if self.level_up is True:
@@ -63,8 +69,13 @@ class FapCeo():
 
 
 def main():
-    game = FapCeo(50, True, True, True)
-    game.click_private_show()
+    loop = 0
+    loops_nr = input("Give loops number: ")
+    game = FapCeo(70, True, True, True)
+    while loop < loops_nr:
+        game.click_private_show()
+        loop = loop + 1
+
 
 
 main()
