@@ -1,7 +1,5 @@
-import os
 import datetime
 import time
-import re
 import subprocess
 
 start = 0
@@ -23,24 +21,23 @@ class FapCeo():
 
     def girlsLevelUp(self):
         print ("Level Up Girls")
-      #  subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
+        subprocess.call(["xdotool", "mousemove", "1180", "816", "click", "1"])
 
     def trySellCompany(self):
         print ("Try Sell Company")
-       # subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
-       # subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
+        subprocess.call(["xdotool", "mousemove", "1326", "179", "click", "1"])
+        subprocess.call(["xdotool", "mousemove", "868", "595", "click", "1"])
         time.sleep(10)
-      # subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
+        subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
 
     def girls(self):
         i =0
         print ("Clicker use {} girls".format(self.girlsNumber))
         while i < len(X):
             subprocess.call(["xdotool", "mousemove", X[i], Y[i], "click", "1"])
+            if self.levelUp == True:
+                self.girlsLevelUp()
             i = i + 1
-
-            #if self.levelUp == True:
-             #   self.girlsLevelUp()
 
     def clickPrivateShow(self):
         start = 0
@@ -55,7 +52,7 @@ class FapCeo():
             print ("Script made {} cliks".format(self.numberOfClicks))
 
 def main():
-    game = FapCeo(10,True,True)
+    game = FapCeo(50, True, True)
     game.clickPrivateShow()
 
 main()
