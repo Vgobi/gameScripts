@@ -66,16 +66,3 @@ class FapCeo():
             self.try_sell_company()
         else:
             print("Script made {} clicks".format(self.number_of_clicks))
-
-
-def main():
-    loop = 0
-    loops_nr = input("Give loops number: ")
-    game = FapCeo(70, True, True, True)
-    while loop < loops_nr:
-        game.click_private_show()
-        loop = loop + 1
-
-
-
-main()
