@@ -62,7 +62,20 @@ class FapCeo():
             self.girls()
             click_nr = click_nr + 1
 
+<<<<<<< HEAD
         if self.level_up is not False and self.sell_company is not False:
             self.try_sell_company()
         else:
             print("Script made {} clicks".format(self.number_of_clicks))
+=======
+        if self.levelUp == True and self.trySellCompany == True:
+            self.trySellCompany()
+        else:
+            print ("Script made {} cliks".format(self.numberOfClicks))
+
+def main():
+    game = FapCeo(10)
+    game.clickPrivateShow()
+
+main()
+>>>>>>> parent of 95195bb... Fix def trySellCompany
