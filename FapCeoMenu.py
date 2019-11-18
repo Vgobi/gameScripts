@@ -1,4 +1,5 @@
-import FapCeo
+from FapCeo import *
+
 
 def main():
     loop = 0
@@ -14,6 +15,6 @@ def main():
     while loop < loops_nr:
         game.click_private_show()
         loop = loop + 1
-
+    print("Script end {}".format(datetime.datetime.now()))
 
 main()
