@@ -6,7 +6,7 @@ X = ["410", "553", "578", "703", "874", "993", "851", "698", "823", "967", "1129
 Y = ["440", "534", "336", "429", "316", "401", "428", "590", "670", "585", "494"]
 
 
-class FapCeo():
+class FapCeo:
 
     def __init__(self, number_of_clicks=10, level_up=False, sell_company=False, hire_new_girls=False, girls_number=11):
         print("Script start {}".format(datetime.datetime.now()))
@@ -16,11 +16,7 @@ class FapCeo():
         self.girls_number = girls_number
         self.hire_new_girls = hire_new_girls
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        print("Script end {}".format(datetime.datetime.now()))
-
     def girls_level_up(self):
-        print("Level Up Girls")
         subprocess.call(["xdotool", "mousemove", "1180", "816", "click", "1"])
 
     def hire_girls(self):
@@ -47,17 +43,14 @@ class FapCeo():
 
     def girls(self):
         i = 0
-        print("Clicker use {} girls".format(self.girls_number))
-        #self.girls_level_up()
         while i < len(X):
             subprocess.call(["xdotool", "mousemove", X[i], Y[i], "click", "1"])
             if self.level_up is True:
                 self.girls_level_up()
-            i = i + 1
+            i += 1
 
     def click_private_show(self):
         click_nr = 0
-        print("Make {} Clicks".format(self.number_of_clicks))
         while click_nr < self.number_of_clicks:
             self.girls()
-            click_nr = click_nr + 1
+            click_nr += 1
