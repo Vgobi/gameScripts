@@ -1,0 +1,8 @@
+- dynamiczny import
+- design patern: poola, fasada, proxy, singleton
+- jak działają pluginy
+- praca za fasade (tylko UE). Wyciąganie KW bezpośrednio z pluginów z pominięciem ute_ue
+- metaklasy
+- scope per library
+- sprzęt
+- 
