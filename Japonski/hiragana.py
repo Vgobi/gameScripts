@@ -10,7 +10,7 @@ i = 0
 while 1:
 
     print("{:3}|{}".format(i, hiragana[random.randrange(0, len(hiragana))]))
-    img = Image.open("a.png")
-    img.show
+    img = Image.open("a.jpg")
+    img.show()
     i += 1
     input("Press enter")
