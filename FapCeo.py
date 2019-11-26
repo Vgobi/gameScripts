@@ -8,7 +8,7 @@ Y = ["440", "534", "336", "429", "316", "401", "428", "590", "670", "585", "494"
 
 class FapCeo:
 
-    def __init__(self, number_of_clicks=10, level_up=False, sell_company=False, hire_new_girls=False, girls_number=11):
+    def __init__(self, number_of_clicks=10, level_up=True, sell_company=True, hire_new_girls=True, girls_number=11):
         print("Script start {}".format(datetime.datetime.now()))
         self.number_of_clicks = number_of_clicks
         self.level_up = level_up
@@ -37,7 +37,7 @@ class FapCeo:
         subprocess.call(["xdotool", "mousemove", "1326", "179", "click", "1"])
         subprocess.call(["xdotool", "mousemove", "868", "595", "click", "1"])
         time.sleep(10)
-        #subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
+        subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
         if self.hire_new_girls is True:
             self.hire_girls()
 

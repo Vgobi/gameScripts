@@ -5,7 +5,7 @@ def main():
     loop = 0
     print("FapCeo automatic script")
     print("Version 1.2")
-    loops_nr = input("Give loops number: ")
+    loops_nr = int(input("Give loops number: "))
     read_default_configuration = input("Do you want read default configuration? [True/False]: ")
     print(read_default_configuration)
     if read_default_configuration is False:
@@ -16,6 +16,7 @@ def main():
     while loop < loops_nr:
         game.click_private_show()
         loop += 1
+        game.try_sell_company()
     print("Script end {}".format(datetime.datetime.now()))
 
 
@@ -36,8 +37,8 @@ def read_configuration():
     with open('config', "r") as f:
         for line in f:
             read_configuration_from_file = line.split(";")
-            print(read_configuration)
-            if read_configuration_from_file[1] == "True":
+            print(read_configuration_from_file)
+            if read_configuration_from_file[1].lower() == "true":
                 read_configuration_from_file[1] = True
             else:
                 read_configuration_from_file[1] = False
