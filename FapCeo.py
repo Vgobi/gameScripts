@@ -20,6 +20,7 @@ class FapCeo:
         subprocess.call(["xdotool", "mousemove", "1180", "816", "click", "1"])
 
     def hire_girls(self):
+        i = 0
         print("Hire new girls")
         time.sleep(20)
         subprocess.call(["xdotool", "mousemove", "1168", "530", "click", "1"])
@@ -28,16 +29,26 @@ class FapCeo:
         subprocess.call(["xdotool", "mousemove", "893", "357", "click", "1"])
         subprocess.call(["xdotool", "mousemove", "1158", "206", "click", "1"])
         subprocess.call(["xdotool", "mousemove", "893", "357", "click", "1"])
+        #Ustawianie pod levelovanie
         time.sleep(20)
-        subprocess.call(["xdotool", "mousemove", "410", "440", "click", "1"])
-        time.sleep(5)
+        while i < 11:
+            subprocess.call(["xdotool", "mousemove", X[i], Y[i], "click", "1"])
+            i += 1
+        time.sleep(10)
+        subprocess.call(["xdotool", "mousemove", "1180", "816", "click", "1"])
+        time.sleep(10)
+        subprocess.call(["xdotool", "mousemove", X[0], Y[0], "click", "1"])
+        time.sleep(10)
+        subprocess.call(["xdotool", "mousemove", "1180", "816", "click", "1"])
+        time.sleep(10)
+
 
     def try_sell_company(self):
         print("Try Sell Company")
         subprocess.call(["xdotool", "mousemove", "1326", "179", "click", "1"])
         subprocess.call(["xdotool", "mousemove", "868", "595", "click", "1"])
         time.sleep(10)
-        subprocess.call(["xdotool", "mousemove", "945", "132", "click", "1"])
+        subprocess.call(["xdotool", "mousemove", "1307", "505", "click", "1"])
         if self.hire_new_girls is True:
             self.hire_girls()
 
