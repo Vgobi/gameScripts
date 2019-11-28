@@ -16,7 +16,8 @@ def main():
     while loop < loops_nr:
         game.click_private_show()
         loop += 1
-        game.try_sell_company()
+        if game.chest_event:
+            game.chest_event_deltatime()
     print("Script end {}".format(datetime.datetime.now()))
 
 
@@ -26,8 +27,9 @@ def write_configuration():
     sell_company = input("Try sell company? [True/False]: ")
     hire_new_girls = input("Try hire new girls after sold company? [True/False]: ")
     girls_number = input("How many girls should by click? [1-11]: ")
-    default_data = "{};{};{};{};{}".format(click_nr, level_up_girls, sell_company, hire_new_girls,
-                                           girls_number)
+    chest_event = input("Chest event [True/False]")
+    default_data = "{};{};{};{};{};{}".format(click_nr, level_up_girls, sell_company, hire_new_girls,
+                                              girls_number, chest_event)
     with open('config', 'w') as f:
         for line in default_data:
             f.write(line)
@@ -50,8 +52,13 @@ def read_configuration():
                 read_configuration_from_file[3] = True
             else:
                 read_configuration_from_file[3] = False
+            if read_configuration_from_file[5] == "True":
+                read_configuration_from_file[5] = True
+            else:
+                read_configuration_from_file[5] = False
     game = FapCeo(int(read_configuration_from_file[0]), read_configuration_from_file[1], read_configuration_from_file[2]
-                  , read_configuration_from_file[3], int(read_configuration_from_file[4]))
+                  , read_configuration_from_file[3], int(read_configuration_from_file[4]),
+                  read_configuration_from_file[5])
     return game
 
 
