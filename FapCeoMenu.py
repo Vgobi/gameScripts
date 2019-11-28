@@ -16,6 +16,10 @@ def main():
     while loop < loops_nr:
         game.click_private_show()
         loop += 1
+        if game.sell_company:
+            game.try_sell_company()
+        if game.hire_new_girls:
+            game.hire_girls()
         if game.chest_event:
             game.chest_event_deltatime()
     print("Script end {}".format(datetime.datetime.now()))

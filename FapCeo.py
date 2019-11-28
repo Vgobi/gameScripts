@@ -52,8 +52,6 @@ class FapCeo:
         subprocess.call(["xdotool", "mousemove", "868", "595", "click", "1"])
         time.sleep(10)
         subprocess.call(["xdotool", "mousemove", "1307", "505", "click", "1"])
-        if self.hire_new_girls is True:
-            self.hire_girls()
 
     def girls(self):
         i = 0
@@ -69,8 +67,6 @@ class FapCeo:
         while click_nr < self.number_of_clicks:
             self.girls()
             click_nr += 1
-        if self.sell_company is True:
-            self.try_sell_company()
 
     def click_chest_event(self):
         print("Time to Click on chest box")
@@ -82,11 +78,9 @@ class FapCeo:
     def chest_event_deltatime(self):
         actual_time = datetime.datetime.now()
         print(self.start_time.strftime("%H:%M:%S"))
-        time_to_next_chest = self.start_time + datetime.timedelta(minutes=2)
+        time_to_next_chest = self.start_time + datetime.timedelta(hours=2, minutes=2)
         if actual_time > time_to_next_chest:
             print("Actual time: {} is bigger that delta time: {}".format(actual_time, time_to_next_chest))
             self.click_chest_event()
             print("Set new start time")
             self.start_time = datetime.datetime.now()
-
-
